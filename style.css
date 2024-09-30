@@ -1,0 +1,222 @@
+/* ROOT */
+
+:root {
+  --primary-pale-blue: hsl(225, 100%, 94%);
+  --primary-bright-blue: hsl(245, 75%, 52%);
+
+  --neutral-very-pale-blue: hsl(225, 100%, 98%);
+  --neutral-desaturated-blue: hsl(224, 23%, 55%);
+  --neutral-dark-blue: hsl(223, 47%, 23%);
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERIC STYLES */
+
+body {
+    font-family: "Red Hat Display", system-ui;
+    font-size: 16px;
+    background-image: url(./images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: var(--primary-pale-blue);
+}
+
+.container {
+    width: 20.5em;
+    margin: 4.5em auto;
+    border-radius: 1.5em;
+    overflow: hidden;
+    background-color: white;
+    color: var(--neutral-desaturated-blue);
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h3 {
+    color: var(--neutral-dark-blue);
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-top: 1.5em;
+    margin-bottom: 0.7em;
+}
+
+.description {
+    margin-left: 1.5em;
+    margin-right: 1.5em; 
+    line-height: 1.5em;
+}
+
+.plans {
+    margin: 1.5em;
+    padding: 1em;
+    border-radius: 0.8em;
+    background-color: var(--neutral-very-pale-blue);
+    display: flex;
+    align-items: center; 
+}
+
+.plans img {
+    width: 3em;
+    height: 3em;
+}
+
+.types-of-plan {
+    text-align: left;
+    margin-left: 1.3em;
+    font-size: 0.88em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 3em;
+    text-wrap: nowrap;
+    
+}
+
+.plans h3 {
+    font-size: 0.95em;
+    font-weight: 900;
+}
+
+.plans a {
+    color: var(--primary-bright-blue);
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 3.9em;
+}
+
+.plans a:hover {
+    text-decoration: none;
+    color: var(--neutral-desaturated-blue);
+}
+
+.pay-btn, .cancel {
+    text-decoration: none;
+    font-family: "Red Hat Display", system-ui;
+    /* both button element and a element don't inherit font-family */
+    font-size: 0.95em;
+    font-weight: 900;
+    border-radius: 0.7em;
+}
+
+.pay-btn {
+    background-color: var(--primary-bright-blue);
+    color: white;
+    padding: 1em;
+    margin: -0.11em 2em 0.5em 2em;
+    box-shadow: 0 0.8em 0.8em 0 var(--neutral-very-pale-blue) ;
+    cursor: pointer;
+    border: none;
+}
+
+.pay-btn:hover {
+    background-color: var(--neutral-desaturated-blue);
+}
+
+.cancel {
+    background-color: white;
+    color: var(--neutral-desaturated-blue);
+    margin: 1em 2em 2em 2em;
+}
+
+.cancel:hover {
+    color: var(--neutral-dark-blue);
+}
+
+
+/* FOOTER */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA QUERIES */
+
+@media  screen and (min-width: 767px) {
+    body {
+        background-image: url(./images/pattern-background-desktop.svg);
+        background-color: var(--primary-pale-blue);
+        
+    }
+    .container {
+        width: 28.2em;
+        margin-top: 6.4em; 
+    }
+
+    h1 {
+        font-size: 1.7em;
+        margin-top: 1.7em;
+        margin-bottom: 0.65em;
+    }
+
+    .description {
+        line-height: 1.6em;
+    }
+
+    .description, .plans, .pay-btn {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+
+    .plans {
+        padding: 1.5em;
+        margin-bottom: 1.7em;
+        margin-top: 1.1em;
+    }
+
+    .types-of-plan {
+        font-size: 1.1em; 
+        margin-left: 0.9em;      
+    }
+
+    .plans a {
+        font-size: 0.8em;
+        margin-left: 7.3em;
+    }
+
+    .cancel {
+        margin-top: 1.5em;
+        margin-bottom: 3.2em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        width: 90%;
+    }   
+}
+
+@media screen and (max-width: 360px) {
+    .types-of-plan {
+        text-wrap: wrap;
+    }   
+
+    .plans a {
+        margin-left: 2em;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .plans a {
+        margin-left: 0.5em;
+    }
+}
